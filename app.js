@@ -4,15 +4,10 @@ const btnCalc = document.querySelector(".btn");
 const divResult = document.querySelector(".result");
 
 btnCalc.addEventListener("click", () => {
-    
-
-
     const weigthData = inputWeigth.value;
     const heightData = inputHeight.value;
 
     const calcImc = () => {
-
-     
         const result = weigthData / heightData ** 2;
 
         return Number(result.toFixed(1));
@@ -20,8 +15,7 @@ btnCalc.addEventListener("click", () => {
 
     let imcResult = calcImc();
 
-    const message = () => {
-
+    const showMessage = () => {
         if (imcResult <= 18.5) {
             return "abaixo do peso";
         }
@@ -45,19 +39,18 @@ btnCalc.addEventListener("click", () => {
         }
     };
 
-    const infoMessage = message() 
+    const infoMessage = showMessage();
 
     const showResult = () => {
-  
+        divResult.classList.remove("hidden");
 
-        divResult.
-        innerHTML= `<p>Seu IMC é 
+        divResult.innerHTML = `<p>Seu IMC é 
                         <span style= "color: #B22222;
                         font-size: 20px;">
                             ${imcResult}
                         </span>
                     </p>
-                    <P>${infoMessage}</P>`
+                    <P>${infoMessage}</P>`;
     };
 
     showResult();

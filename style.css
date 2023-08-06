@@ -1,22 +1,25 @@
 * {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-
 body {
-    background-color: #B0C4DE;
-    margin-top: 30px;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    background-color: #b0c4de;
 }
 
 .main-content {
     margin: 0 auto;
     width: 400px;
-    height: 80px;
 }
 
 .title {
     color: blanchedalmond;
-    background-color: #6A5ACD;
+    background-color: #6a5acd;
     text-align: center;
     margin-bottom: 40px;
 }
@@ -24,12 +27,12 @@ body {
 form {
     background-color: cornflowerblue;
     padding: 30px;
-    
 }
 
 input {
-    background-color: #F5DEB3;
+    background-color: #f5deb3;
     width: 70px;
+    height: 25px;
     margin-left: 30px;
     text-align: center;
 }
@@ -43,24 +46,28 @@ label {
     font-size: 20px;
 }
 
-
 .btn {
     display: block;
     margin: 0 auto;
     margin-top: 40px;
     padding: 10px;
     cursor: pointer;
+    background-color: #87cefa;
     border: 2px dotted;
 }
 
 .result {
-    background-color: #87CEEB;
+    background-color: #87ceeb;
     padding: 10px;
     width: 190px;
     margin: 0 auto;
     margin-top: 30px;
     text-align: center;
     border: 2px dashed;
+}
+
+.result.hidden {
+    display: none;
 }
 
 input::-webkit-outer-spin-button,
