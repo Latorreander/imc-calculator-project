@@ -1,21 +1,25 @@
-const inputWeigth = document.getElementById("weigth");
-const inputHeight = document.getElementById("age");
+const inputWeight = document.getElementById("weight");
+const inputHeight = document.getElementById("height");
 const btnCalc = document.querySelector(".btn");
 const divResult = document.querySelector(".result");
 
 btnCalc.addEventListener("click", () => {
-    const weigthData = inputWeigth.value;
+    
+    const weightData = inputWeight.value;
     const heightData = inputHeight.value;
-
+    
     const calcImc = () => {
-        const result = weigthData / heightData ** 2;
+  
+        const result = weightData / heightData ** 2;
 
-        return Number(result.toFixed(1));
+        return Number(result.toFixed(2));
     };
 
     let imcResult = calcImc();
+    console.log(imcResult)
 
     const showMessage = () => {
+
         if (imcResult <= 18.5) {
             return "abaixo do peso";
         }
@@ -37,16 +41,21 @@ btnCalc.addEventListener("click", () => {
         if (imcResult >= 40) {
             return "Obesidade III (mórbida)";
         }
+    
     };
 
-    const infoMessage = showMessage();
+    const infoMessage = showMessage(); 
+
+    if (infoMessage === undefined){
+        return 
+    }
 
     const showResult = () => {
         divResult.classList.remove("hidden");
 
         divResult.innerHTML = `<p>Seu IMC é 
                         <span style= "color: #B22222;
-                        font-size: 20px;">
+                        font-size: 25px;">
                             ${imcResult}
                         </span>
                     </p>
